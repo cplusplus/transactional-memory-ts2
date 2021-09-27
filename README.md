@@ -1,17 +1,17 @@
-<https://github.com/fraggamuffin/concurrency_ts2> is the repository for
-the C++ Technical Specification "Concurrency TS 2".
+<https://github.com/fraggamuffin/tm_ts2021> is the repository for
+the C++ Technical Specification "Trannsactional Memory TS 2021".
 
 The draft Technical Specification is found in the `src` directory and is
 written in LaTeX. There is a Makefile that can be used to compile the
 sources, or you can use the `latexmk` program e.g. `latexmk -pdf ts`
 will generate a PDF.
 
-\textbf{Concurrency TS2 Editor's Report}
-\textbf{pre-Oct 2021 virtual Plenary meeting}
+\textbf{TM TS2021 Editor's Report}
+\textbf{pre-Feb 2022 virtual Plenary meeting}
 
-N4895 is the proposed working draft of Concurrency TS Version 2. It contains changes to the Concurrency  TS as directed by the committee at the June 2021 virtual plenary meeting, and editorial changes.
+Nxxxx is the proposed working draft of Concurrency TS Version 2. It contains changes to the TM TS2021 as directed by the committee at the June 2021 virtual plenary meeting, and editorial changes.
 
-N4895 contains P1121R3 and P1122R4 from the June 2021 virtual plenary.
+N4895 contains P2066R9 from Oct 2021 virtual plenary.
 
 \textbf{Technical Changes}
 None
@@ -21,4 +21,4 @@ None
 
 \textbf{Acknowledgement}
 
-Thank you to the Editing team of Michael Wong, Paul McKenney, Maged Michael, and Jens Maurer. 
+Thank you to the Editing team of Michael Wong, Hans Boehm, and Jens Maurer. 
