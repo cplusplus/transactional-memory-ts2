@@ -58,7 +58,7 @@ Since the extensions described in this technical specification are experimental 
 
 \begin{itemize}
     \item modify an existing interface in the C++ Standard Library in-place,
-    \item are declared in a namespace whose name appends \tcode{::experimental::concurrency\_v2} to a namespace defined in the C++ Standard Library, such as \tcode{std}, or
+    \item are declared in a namespace whose name appends \tcode{::experimental::transactional\_memory\_v2} to a namespace defined in the C++ Standard Library, such as \tcode{std}, or
     \item are declared in a subnamespace of a namespace described in the previous bullet, whose name is not the same as an existing subnamespace of namespace \tcode{std}.
 \end{itemize}
 
@@ -105,7 +105,7 @@ An implementation that provides support for this document should define each fea
 \lhdr{Macro name} & \chdr{Value} & \rhdr{Header} \\
 \capsep
 %%\tcode{__cpp_concurrency\_v2}  & \tcode{\tsver}   &  none \\
-\tcode{__cpp_lib_concurrency\_v2}  & \tcode{\tsver}  & \tcode{<experimental/concurrency\_v2>} \\
+\tcode{__cpp_lib_transactional\_memory\_v2}  & \tcode{\tsver}  & \tcode{<experimental/transactional\_memory\_v2>} \\
 \end{floattable}
 \rSec1[general.plans]{Future plans (Informative)}
 \pnum
@@ -114,13 +114,13 @@ future versions of the C++ Standard.
 
 \pnum
  The C++ committee intends to release a new version of this technical specification approximately every few years, containing
-the concurrency extensions we hope to add to a near-future version of the C++ Standard. Future versions will define their
-contents in \tcode{std::experimental::concurrency\_v3}, \tcode{std::experimental::concurrency\_v4}, etc., with the most recent
+the transactional\_memory extensions we hope to add to a near-future version of the C++ Standard. Future versions will define their
+contents in \tcode{std::experimental::transactional\_memory\_v3}, \tcode{std::experimental::transactional\_memory\_v4}, etc., with the most recent
 implemented version inlined into \tcode{std::ex\-perimental}.
 
 \pnum
 When an extension defined in this or a future version of this technical specification represents enough existing practice, it
-will be moved into the next version of the C++ Standard by removing the \tcode{experimental::con\-currency\_v$N$} segment of its
+will be moved into the next version of the C++ Standard by removing the \tcode{experimental::transactional\_memory\_v$N$} segment of its
 namespace and by removing the \tcode{experimental/} prefix from its header's path.
 
 \rSec1[general.ack]{Acknowledgments}
