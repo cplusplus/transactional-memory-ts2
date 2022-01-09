@@ -1,15 +1,309 @@
 %!TEX root = ts.tex
-
+\setcounter{section}{9}
 \rSec0[lex]{Lexical conventions}
 
-\setcounter{section}{9}
+
 \rSec1[lex.name]{Identifiers}
 
 \pnum
 In 5.10 {[}lex.name{]}, add \uline{\texttt{atomic}} to table 4
 {[}tab:lex.name.special{]}.
 
+\rSec0[basic]{Basics}
+\rSec1[basic.exec]{Program execution}
+\rSec2[intro.execution]{Sequential execution}
 
+\pnum
+Change in 6.9.1 {[}intro.execution{]} paragraph 5:
 
+\begin{quote}
+A \emph{full-expression} is
 
+\begin{itemize}
+\tightlist
+\item
+  ...
+\item
+  an invocation of a destructor generated at the end of the lifetime of
+  an object other than a temporary object (6.7.7) whose lifetime has not
+  been extended, \sout{or}
+\item
+  \uline{the start and the end of an atomic block (8.8 {[}stmt.tx{]}),
+  or}
+\item
+  an expression that is not a subexpression of another expression and
+  that is not otherwise part of a full-expression.
+\end{itemize}
+\end{quote}
 
+\rSec2[intro.multithread]{Multi-threaded executions and data races}
+\rSec3[intro.races]{Data races} 
+\pnum
+Change in 6.9.2.1 {[}intro.races{]} paragraph 6:
+
+\begin{quote}
+\uline{Atomic blocks as well as} \sout{Certain} \uline{certain} library
+calls \uline{may} \emph{synchronize with} other \uline{atomic blocks
+and} library calls performed by another thread.
+\end{quote}
+
+\pnum
+Add a new paragraph after 6.9.2.1 {[}intro.races{]} paragraph 20:
+
+\begin{quote}
+An atomic block that is not dynamically nested within another atomic
+block is termed a transaction. {[}Note: Due to syntactic constraints,
+blocks cannot overlap unless one is nested within the other.{]} There is
+a global total order of execution for all transactions. If, in that
+total order, a transaction T1 is ordered before a transaction T2, then
+
+\begin{itemize}
+\tightlist
+\item
+  no evaluation in T2 happens before any evaluation in T1 and
+\item
+  if T1 and T2 perform conflicting expression evaluations, then the end
+  of T1 synchronizes with the start of T2.
+\end{itemize}
+
+{[} Note: If the evaluations in T1 and T2 do not conflict, they might be
+executed concurrently. -\/- end note {]}
+\end{quote}
+
+\begin{quote}
+Two actions are \emph{potentially concurrent} if ...
+\end{quote}
+
+\pnum
+Change in 6.9.2.1 {[}intro.races{]} paragraph 21:
+
+\begin{quote}
+... {[}Note: It can be shown that programs that correctly use
+mutexes\uline{, atomic blocks,} and \texttt{memory\_order::seq\_cst}
+operations to prevent all data races and use no other synchronization
+operations behave as if the operations executed by their constituent
+threads were simply interleaved, with each value computation of an
+object being taken from the last side effect on that object in that
+interleaving. This is normally referred to as "sequential consistency".
+...
+\end{quote}
+
+\pnum
+Add a new paragraph after 6.9.2.1 {[}intro.races{]} paragraph 21:
+
+\begin{quote}
+{[} Note: The following holds for a data-race-free program: If the start
+of an atomic block T is sequenced before an evaluation A, A is sequenced
+before the end of T, A strongly happens before some evaluation B, and B
+is not sequenced before the end of T, then the end of T strongly happens
+before B. If an evaluation C strongly happens before that evaluation A
+and C is not sequenced after the start of T, then C strongly happens
+before the start of T. These properties in turn imply that in any simple
+interleaved (sequentially consistent) execution, the operations of each
+atomic block appear to be contiguous in the interleaving. -\/- end note
+{]}
+\end{quote}
+
+\rSec3[intro.progress]{Forward progress} 
+
+\pnum
+Change in 6.9.2.2 {[}intro.progress{]} paragraph 1:
+
+\begin{quote}
+\sout{The implementation may assume that any thread will eventually do}
+\uline{An \emph{inter-thread side effect} is} one of the following:
+
+\begin{itemize}
+\tightlist
+\item
+  \sout{terminate,}
+\item
+  a call to a library I/O function,
+\item
+  an access through a volatile glvalue, or
+\item
+  a synchronization operation or an atomic operation
+  \uline{({[}atomics{]})}.
+\end{itemize}
+
+\uline{The implementation may assume that any thread will eventually
+terminate or evaluate an inter-thread side effect.} {[}Note: This is
+intended to allow compiler transformations such as removal of empty
+loops, even when termination cannot be proven. --- end note{]}
+\end{quote}
+
+\rSec0[stmt.stmt]{Statements}
+\rSec1[stmt.pre]{Preamble}  
+\pnum
+Add a production to the grammar in 8.1 {[}expr.pre{]}:
+
+\begin{quote}
+\begin{verbatim}
+statement:
+      labeled-statement
+      attribute-specifier-seqopt expression-statement
+      attribute-specifier-seqopt compound-statement
+      attribute-specifier-seqopt selection-statement
+      attribute-specifier-seqopt iteration-statement
+      attribute-specifier-seqopt jump-statement
+      declaration-statement
+      attribute-specifier-seqopt try-block
+      \uline{atomic-statement}
+\end{verbatim}
+\end{quote}
+
+\rSec1[stmt.dcl]{Declaration statement}  
+
+\pnum
+Add a new subclause before 8.8 {[}stmt.dcl{]}:
+
+\begin{quote}
+\textbf{8.8 Atomic statement {[}stmt.tx{]}}
+
+\begin{verbatim}
+atomic-statement:
+     atomic do compound-statement
+\end{verbatim}
+
+An \emph{atomic-statement} is also called an \emph{atomic block}.
+
+The start of the atomic block is immediately before the opening
+\texttt{\{} of the \emph{compound-statement}. The end of the atomic
+block is immediately after the closing \texttt{\}} of the
+\emph{compound-statement}. {[} Note: Thus, variables with automatic
+storage duration declared in the \emph{compound-statement} are destroyed
+prior to reaching the end of the atomic block; see 8.7 {[}stmt.jump{]}.
+-\/- end note {]}
+
+A goto or switch statement shall not be used to transfer control into an
+atomic block.
+
+If the execution of an atomic block evaluates an inter-thread side
+effect (6.9.2.2 {[}intro.progress{]}) or if an atomic block is exited
+via an exception, the behavior is undefined.
+
+\emph{Recommended practice:} In case an atomic block is exited via an
+exception, the program should be terminated without invoking a terminate
+handler (17.9.5 {[}exception.terminate{]}) or destroying any objects
+with static or thread storage duration (6.9.3.4 {[}basic.start.term{]}).
+
+If the execution of an atomic block evaluates any of the following
+outside of a manifestly constant-evaluated context (7.7
+{[}expr.const{]}), the behavior is implementation-defined:
+
+\begin{itemize}
+\tightlist
+\item
+  an \emph{asm-declaration} (9.10 {[}dcl.asm{]});
+\item
+  an invocation of a function \textbf{other than one of the standard
+  library functions specified in (16.4.6.17 {[}atomic.use{]}), unless
+  the function is inline} with a reachable definition;
+\item
+  a virtual function call (7.6.1.3 {[}expr.call{]});
+\item
+  a function call, \textbf{unless overload resolution selects}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{a named function (12.2.2.2.2 {[}over.call.func{]}) or}
+  \item
+    \textbf{a function call operator (12.2.2.2.3
+    {[}over.call.object{]}), but not a surrogate call function;}
+  \end{itemize}
+\item
+  a \texttt{co\_await} expression (7.6.2.3 {[}expr.await{]}), a
+  \emph{yield-expression} (7.6.17 {[}expr.yield{]}), or a
+  \texttt{co\_return} statement (8.7.4 {[}stmt.return.coroutine{]});
+\item
+  dynamic initialization of a block-scope variable with static storage
+  duration; or
+\item
+  dynamic initialization of a variable with thread storage duration.
+\end{itemize}
+
+{[} Note: The implementation \textbf{can} define that the behavior is
+undefined in some or all of the cases above. {]}
+
+{[} Example:
+
+\begin{verbatim}
+unsigned int f()
+{
+  static unsigned int i = 0;
+  atomic do {
+    ++i;
+    return i;
+  }
+}
+\end{verbatim}
+
+Each invocation of f (even when called from several threads
+simultaneously) retrieves a unique value (ignoring
+\textbf{wrap-around}). -\/- end example {]}
+
+{[} Note: Atomic blocks are likely to perform best where they execute
+quickly and touch little data. -\/- end note {]}
+\end{quote}
+
+\rSec1[library]{Library introduction}
+\rSec2[description]{Method of description} 
+%\rsec2[description]{Method of description} 
+
+\pnum
+
+Add 16.4.6.17 {[}atomic.use{]}:
+
+\begin{quote}
+\hypertarget{functions-usable-in-an-atomic-block-atomic.use}{%
+\subsection{16.4.6.17 Functions usable in an atomic block
+{[}atomic.use{]}}\label{functions-usable-in-an-atomic-block-atomic.use}}
+
+All library functions may be used in an atomic block (8.8
+{[}stmt.tx{]}), except
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{error category objects ({[}syserr.errcat.objects{]})}
+\item
+  time zone database ({[}time.zone.db{]})
+\item
+  clocks ({[}time.clock{]})
+\item
+  \texttt{signal} ({[}support.signal{]}) \textbf{and \texttt{raise}
+  ({[}csignal.syn{]})}
+\item
+  \texttt{set\_new\_handler}, \texttt{set\_terminate},
+  \texttt{get\_new\_handler}, \texttt{get\_terminate}
+  ({[}handler.functions{]}, {[}alloc.errors{]}, {[}exception.syn{]})
+\item
+  \textbf{\texttt{system} ({[}cstdlib.syn{]})}
+\item
+  \textbf{startup and termination {[}support.start.term{]} except
+  \texttt{abort}}
+\item
+  \texttt{shared\_ptr} ({[}util.smartptr.shared{]}) and
+  \texttt{weak\_ptr} ({[}util.smartptr.weak{]})
+\item
+  \texttt{synchronized\_pool\_resource} ({[}mem.res.pool{]})
+\item
+  \textbf{program-wide \texttt{memory\_resource} objects
+  ({[}mem.res.global{]})}
+\item
+  \texttt{setjmp} / \texttt{longjmp} ({[}csetjmp.syn{]})
+\item
+  \textbf{parallel algorithms ({[}algorithms.parallel{]})}
+\item
+  \textbf{\texttt{random\_device} ({[}rand.device{]})}
+\item
+  \texttt{locale} construction ({[}locale.cons{]})
+\item
+  input/output ({[}input.output{]})
+\item
+  atomic operations ({[}atomics{]})
+\item
+  thread support ({[}thread{]})
+\end{itemize}
+\end{quote}
