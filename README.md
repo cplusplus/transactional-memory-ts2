@@ -11,7 +11,7 @@ will generate a PDF.
 
 Nxxxx is the proposed working draft of Concurrency TS Version 2. It contains changes to the TM TS2021 as directed by the committee at the June 2021 virtual plenary meeting, and editorial changes.
 
-N4895 contains P2066R9 from Oct 2021 virtual plenary.
+N4895 contains P2066R10 from Oct 2021 virtual plenary.
 
 \textbf{Technical Changes}
 None
