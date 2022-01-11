@@ -9,7 +9,7 @@ will generate a PDF.
 \textbf{TM TS2021 Editor's Report}
 \textbf{pre-Feb 2022 virtual Plenary meeting}
 
-Nxxxx is the proposed working draft of Concurrency TS Version 2. It contains changes to the TM TS2021 as directed by the committee at the June 2021 virtual plenary meeting, and editorial changes.
+Nxxxx is the proposed working draft of Transactional Memory TS Version 2. It contains changes to the TM TS2021 as directed by the committee at the June 2021 virtual plenary meeting, and editorial changes.
 
 N4895 contains P2066R10 from Oct 2021 virtual plenary.
 
