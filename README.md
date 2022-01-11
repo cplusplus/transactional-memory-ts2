@@ -6,19 +6,25 @@ written in LaTeX. There is a Makefile that can be used to compile the
 sources, or you can use the `latexmk` program e.g. `latexmk -pdf ts`
 will generate a PDF.
 
-\textbf{TM TS2021 Editor's Report}
-\textbf{pre-Feb 2022 virtual Plenary meeting}
+# TM TS2021 Editor's Report
+
+## pre-Feb 2022 virtual Plenary meeting
 
 Nxxxx is the proposed working draft of Transactional Memory TS Version 2. It contains changes to the TM TS2021 as directed by the committee at the June 2021 virtual plenary meeting, and editorial changes.
 
 N4895 contains P2066R10 from Oct 2021 virtual plenary.
 
-\textbf{Technical Changes}
+## Technical Changes
 None
 
-\textbf{Notes}
+## Notes
 None
 
-\textbf{Acknowledgement}
+## Acknowledgement
 
-Thank you to the Editing team of Michael Wong, Hans Boehm, and Jens Maurer. 
+Michael Wong
+Hans Boehm
+Jens Maurer
+Victor Luchangco
+Michael Spear
+Michael Scott
