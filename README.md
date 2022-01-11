@@ -15,12 +15,14 @@ Nxxxx is the proposed working draft of Transactional Memory TS Version 2. It con
 N4895 contains P2066R10 from Oct 2021 virtual plenary.
 
 ## Technical Changes
+
 None
 
 ## Notes
+
 None
 
-## Acknowledgement
+## Acknowledgements
 
 Michael Wong
 Hans Boehm
