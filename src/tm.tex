@@ -237,9 +237,16 @@ the behavior is implementation-defined:
 \item
   an \grammarterm{asm-declaration} (\cxxref{dcl.asm});
 \item
-  an invocation of a function other than one of the standard
-  library functions specified in \ref{atomic.use}, unless
-  the function is inline with a reachable definition;
+  an invocation of a function, unless
+  \begin{itemize}
+  \tightlist
+  \item
+    {the function is inline with a reachable definition or}
+  \item
+    {the function is a library function that may be used in an atomic
+    block \ref{atomic.use};}
+  \end{itemize}
+
 \item
   a virtual function call (\cxxref{expr.call});
 \item
