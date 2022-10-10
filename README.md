@@ -15,7 +15,7 @@ will generate a PDF.
 
 NXXXX is the DTS of Transactional Memory TS Version 2. It contains changes to the TM TS2021 as directed by the committee at the July-25 2022 virtual plenary meeting, and editorial changes.
 
-NXXXX contains P2617R0 from TM-TS2 DTS ballot comments resolution.
+NXXXX contains P2617R0 Responses to NB comments on TM-TS2 DTS 12907.
 
 
 ## pre-Feb 2022 virtual Plenary meeting
