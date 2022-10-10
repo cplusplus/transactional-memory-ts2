@@ -206,8 +206,11 @@ see \cxxref{stmt.jump}.
 \end{note}
 
 \pnum
-A goto or switch statement shall not be used to transfer control
-into an atomic block.
+A \keyword{case} or \keyword{default} label
+appearing within an atomic block shall be associated with a
+\keyword{switch} statement (\cxxref{stmt.switch}) within the same
+atomic block. A label (\cxxref{stmt.label}) declared in an atomic block
+shall only be referred to by a statement in the same atomic block.
 
 \pnum
 If the execution of an atomic block evaluates an inter-thread side
