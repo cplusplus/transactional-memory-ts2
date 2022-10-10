@@ -1,5 +1,8 @@
-<https://github.com/fraggamuffin/tm_ts2021> is the repository for
-the C++ Technical Specification "Trannsactional Memory TS 2021".
+<This came from https://github.com/fraggamuffin/tm_ts2021> which was the repository for
+the C++ Technical Specification "Trannsactional Memory TS 2021" for N4906, the TM-TS2 from 2022-02-14:
+https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2022/n4906.pdf
+It was moved here on Oct 10, 2022 where it will be edited for the DTS changes from P2617
+https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2022/p2617r0.html
 
 The draft Technical Specification is found in the `src` directory and is
 written in LaTeX. There is a Makefile that can be used to compile the
@@ -10,7 +13,7 @@ will generate a PDF.
 
 ## pre-Feb 2022 virtual Plenary meeting
 
-Nxxxx is the proposed working draft of Transactional Memory TS Version 2. It contains changes to the TM TS2021 as directed by the committee at the June 2021 virtual plenary meeting, and editorial changes.
+N4906 is the proposed working draft of Transactional Memory TS Version 2. It contains changes to the TM TS2021 as directed by the committee at the June 2021 virtual plenary meeting, and editorial changes.
 
 N4895 contains P2066R10 from Oct 2021 virtual plenary.
 
