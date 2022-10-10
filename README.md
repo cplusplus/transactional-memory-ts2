@@ -11,6 +11,13 @@ will generate a PDF.
 
 # TM TS2021 Editor's Report
 
+## pre-Kona Nov 2022 Plenary meeting
+
+NXXXX is the DTS of Transactional Memory TS Version 2. It contains changes to the TM TS2021 as directed by the committee at the July-25 2022 virtual plenary meeting, and editorial changes.
+
+NXXXX contains P2617R0 from TM-TS2 DTS ballot comments resolution.
+
+
 ## pre-Feb 2022 virtual Plenary meeting
 
 N4906 is the proposed working draft of Transactional Memory TS Version 2. It contains changes to the TM TS2021 as directed by the committee at the June 2021 virtual plenary meeting, and editorial changes.
