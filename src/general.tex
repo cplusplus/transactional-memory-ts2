@@ -3,7 +3,12 @@
 \rSec0[scope]{Scope}
 
 \pnum
-This document describes requirements for implementations of an interface that computer programs written in the C++ programming language may use to invoke algorithms with concurrent execution. The algorithms described by this document are realizable across a broad class of computer architectures.
+This document describes requirements for implementations of an interface
+that computer programs written in the C++ programming language
+can use to express groups of
+operations (known as transactions) that appear to execute atomically in
+relation to other transactions (concurrent or otherwise).
+
 
 \pnum
 {\cppstddocno} provide important context and specification for
