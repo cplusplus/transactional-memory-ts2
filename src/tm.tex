@@ -194,10 +194,13 @@ Add a new subclause before \CppXref{stmt.dcl}:
 An \grammarterm{atomic-statement} is also called an \emph{atomic block}.
 
 \pnum
-The start of the atomic block is immediately before the opening
-\tcode{\{} of the \grammarterm{compound-statement}.
-The end of the atomic block is immediately after
-the closing \tcode{\}} of the \grammarterm{compound-statement}.
+The start of the atomic block is immediately after the
+opening \tcode{\{} of the \grammarterm{compound-statement}.
+Evaluation of the end of the atomic block occurs
+when the invocation of the destructor for a hypothetical automatic
+variable of class type declared at the start of the atomic block would
+happen (\cxxref{stmt.jump.general}).
+
 \begin{note}
 Thus, variables with automatic storage duration
 declared in the \grammarterm{compound-statement}
@@ -227,7 +230,7 @@ with static or thread storage duration (\cxxref{basic.start.term}).
 
 \pnum
 If the execution of an atomic block evaluates any of the following
-outside of a manifestly constant-evaluated context (\cxxref{7.7}),
+outside of a manifestly constant-evaluated context (\cxxref{expr.const}),
 the behavior is implementation-defined:
 
 \begin{itemize}
