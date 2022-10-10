@@ -1,7 +1,7 @@
 <This came from https://github.com/fraggamuffin/tm_ts2021> which was the repository for
 the C++ Technical Specification "Trannsactional Memory TS 2021" for N4906, the TM-TS2 from 2022-02-14:
 https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2022/n4906.pdf
-It was moved here on Oct 10, 2022 where it will be edited for the DTS changes from P2617
+It was moved here on Oct 10, 2022 where it will be edited for the DTS ballot comments from P2617
 https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2022/p2617r0.html
 
 The draft Technical Specification is found in the `src` directory and is
