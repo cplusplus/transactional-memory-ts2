@@ -16,13 +16,13 @@ will generate a PDF.
 1.  N4923 revises N4906 and is the DTS of Transactional Memory TS Version 2. It contains changes to the N4906 as directed by the committee at the July-25 2022 virtual plenary meeting, and editorial changes.
 2. N4923 revises N4906 with P2617R0 Responses to NB comments on TM-TS2 DTS 12907. It omits the symbolic references in P2517R0 in cross-references as is conventional in these documents and just use the numeric references. 
 
-3. Other then the front matter changes, it also contain the following editorial changes:
+3. Other then the front matter changes, it also contains the following editorial changes:
 
-in Sec. 4.2: Michael Scott->Michael L. Scotts
+      in Sec. 4.2: Michael Scott->Michael L. Scotts
 
-In 6.9.1 (Line 5.3), “start and the end of an atomic block” -> “start or the end of an atomic block”
+      In 6.9.1 (Line 5.3), “start and the end of an atomic block” -> “start or the end of an atomic block”
 
-In 6.9.2.2 (Line 21), “An atomic block” ->  “The execution of an atomic block”
+      In 6.9.2.2 (Line 21), “An atomic block” ->  “The execution of an atomic block”
 
 
 ## pre-Feb 2022 virtual Plenary meeting N4906
