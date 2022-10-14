@@ -19,7 +19,9 @@ will generate a PDF.
 3. Other then the front matter changes, it also contain the following editorial changes:
 
 in Sec. 4.2: Michael Scott->Michael L. Scotts
+
 In 6.9.1 (Line 5.3), “start and the end of an atomic block” -> “start or the end of an atomic block”
+
 In 6.9.2.2 (Line 21), “An atomic block” ->  “The execution of an atomic block”
 
 
