@@ -41,9 +41,10 @@ None
 
 ## Acknowledgements
 
-Michael Wong
+
 Hans Boehm
-Jens Maurer
 Victor Luchangco
+Jens Maurer
+Michael L. Scotts
 Michael Spear
-Michael Scott
+Michael Wong
