@@ -34,7 +34,7 @@ A \defn{full-expression} is
   an object other than a temporary object (6.7.7) whose lifetime has not
   been extended, \removed{or}
 \item
-  \added{the start and the end of an atomic block (\ref{stmt.tx}),
+  \added{the start or the end of an atomic block (\ref{stmt.tx}),
   or}
 \item
   an expression that is not a subexpression of another expression and
@@ -62,7 +62,7 @@ Add a new paragraph after \CppXref{intro.races} paragraph 20:
 \pnum
 \setcounter{Paras}{20}
 \setcounter{note}{20}
-An atomic block that is not dynamically nested within another atomic
+The execution of an atomic block that is not dynamically nested within another atomic
 block is termed a \defn{transaction}.
 \begin{note}
 Due to syntactic constraints,
