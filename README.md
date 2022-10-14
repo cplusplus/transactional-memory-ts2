@@ -45,6 +45,6 @@ None
 Hans Boehm
 Victor Luchangco
 Jens Maurer
-Michael L. Scotts
+Michael L. Scott
 Michael Spear
 Michael Wong
