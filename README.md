@@ -10,6 +10,8 @@ sources, or you can use the `latexmk` program e.g. `latexmk -pdf ts`
 will generate a PDF.
 
 # TM TS2021 Editor's Report
+## pre-Kona Nov 2023 Plenary meeting N4969
+N4969 revises N4906 as directed by ISO editors by removing colour changes and replacing with explicit text changes.
 
 ## pre-Kona Nov 2022 Plenary meeting N4923
 

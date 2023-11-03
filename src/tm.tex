@@ -6,7 +6,8 @@
 \rSec1[lex.name]{Identifiers}
 
 In \CppXref{lex.name},
-add \added{\tcode{atomic}} to the table of identifiers with special meaning (Table 4).
+add %\added
+{\tcode{atomic}} to the table of identifiers with special meaning (Table 4).
 
 \rSec0[basic]{Basics}
 
@@ -32,9 +33,11 @@ A \defn{full-expression} is
 \item
   an invocation of a destructor generated at the end of the lifetime of
   an object other than a temporary object (6.7.7) whose lifetime has not
-  been extended, \removed{or}
+  been extended, 
+  %\removed{or}
 \item
-  \added{the start or the end of an atomic block (\ref{stmt.tx}),
+  %\added
+  {the start or the end of an atomic block (\ref{stmt.tx}),
   or}
 \item
   an expression that is not a subexpression of another expression and
@@ -51,8 +54,12 @@ Change in \CppXref{intro.races} paragraph 6 as indicated:
 \begin{quote}
 \setcounter{Paras}{5}
 \pnum
-\removed{Certain} \added{Atomic blocks as well as certain} library
-calls \added{may} \emph{synchronize with} other \added{atomic blocks
+%\removed{Certain} \added
+{Atomic blocks as well as certain} library
+calls 
+%\added
+{may} \emph{synchronize with} other %\added
+{atomic blocks
 and} library calls performed by another thread.
 \end{quote}
 
@@ -98,7 +105,9 @@ Change in \CppXref{intro.races} paragraph 21:
 ...
 \begin{note}
 It can be shown that programs that correctly use
-mutexes\added{, atomic blocks,} and \tcode{memory_order::seq_cst}
+mutexes
+%\added
+{, atomic blocks,} and \tcode{memory_order::seq_cst}
 operations to prevent all data races and use no other synchronization
 operations behave as if the operations executed by their constituent
 threads were simply interleaved, with each value computation of an
@@ -132,23 +141,26 @@ Change in \CppXref{intro.progress} paragraph 1 as indicated:
 
 \begin{quote}
 \pnum
-\removed{The implementation may assume that any thread will eventually do}
-\added{An \defn{inter-thread side effect} is} one of the following:
+%\removed{The implementation may assume that any thread will eventually do}
+%\added
+{An \defn{inter-thread side effect} is} one of the following:
 
 \begin{itemize}
 \tightlist
-\item
-  \removed{terminate,}
+%\item
+  %\removed{terminate,}
 \item
   a call to a library I/O function,
 \item
   an access through a volatile glvalue, or
 \item
   a synchronization operation or an atomic operation
-  \added{(\cxxref{atomics})}.
+  %\added
+  {(\cxxref{atomics})}.
 \end{itemize}
 
-\added{The implementation may assume that any thread will eventually
+%\added
+{The implementation may assume that any thread will eventually
 terminate or evaluate an inter-thread side effect.}
 \begin{note}
 This is intended to allow compiler transformations
@@ -174,7 +186,8 @@ Add a production to the grammar in \CppXref{stmt.pre} as indicated:
     \opt{attribute-specifier-seq} jump-statement\br
     declaration-statement\br
     \opt{attribute-specifier-seq} try-block\br
-    \added{atomic-statement}
+    %\added
+    {atomic-statement}
 \end{bnf}
 \end{quote}
 
