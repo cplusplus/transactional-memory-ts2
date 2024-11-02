@@ -21,10 +21,15 @@
 %%  create page styles
 
 \makepagestyle{cpppage}
-\makeevenhead{cpppage}{\copyright\,\textsc{ISO/IEC}}{}{\textbf{\docno}}
-\makeoddhead{cpppage}{\copyright\,\textsc{ISO/IEC}}{}{\textbf{\docno}}
-\makeevenfoot{cpppage}{\leftmark}{}{\thepage}
-\makeoddfoot{cpppage}{\leftmark}{}{\thepage}
+\makeevenhead{cpppage}{\textsc{ISO/IEC DTS 12907:2024(E)}}{}{\textbf{\docno}}
+\makeoddhead{cpppage}{\textsc{ISO/IEC DTS 12907:2024(E)}}{}{\textbf{\docno}}
+\makeevenfoot{cpppage}{}{© ISO/IEC 2024 – All rights reserved \\ \thepage}{}
+\makeoddfoot{cpppage}{}{© ISO/IEC 2024 – All rights reserved \\ \thepage}{}
+%%\makeevenhead{cpppage}{\copyright\,\textsc{ISO/IEC}}{}{\textbf{\docno}}
+%%\makeoddhead{cpppage}{\copyright\,\textsc{ISO/IEC}}{}{\textbf{\docno}}
+%%\makeevenfoot{cpppage}{\leftmark}{}{\thepage}
+%%\makeoddfoot{cpppage}{\leftmark}{}{\thepage}
+
 
 \makeatletter
 \makepsmarks{cpppage}{%

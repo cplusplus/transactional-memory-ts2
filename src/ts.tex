@@ -28,8 +28,9 @@
 \usepackage{xcolor}
 \usepackage[T1]{fontenc}
 \usepackage[pdftex, final]{graphicx}
+\usepackage{pdfpages}
 \usepackage[pdftex,
-            pdftitle={C++ Transactional Memory Technical Specification 2},
+            pdftitle={Programming Languages — Technical specification for C++ extensions for Transactional Memory 2},
             pdfsubject={C++ Transactional Memory Technical Specification 2},
             pdfcreator={Michael Wong, Jens Maurer, Hans Boehm, Michael Spear, Michael L.
 Scott, and Victor Luchangco},
@@ -46,7 +47,7 @@ Scott, and Victor Luchangco},
 \usepackage{memhfixc}     % fix interactions between hyperref and memoir
 \usepackage{xparse}
 \usepackage{xstring}
-
+\documentclass{article}
 \input{layout}
 \input{styles}
 \input{macros}
@@ -58,8 +59,14 @@ Scott, and Victor Luchangco},
 
 %%--------------------------------------------------
 %% macros specific to the TS 2
+\newcommand{\completionsig}{\Fundesc{Completion signature}}
+\newcommand{\DEDUCED}{\textit{\texttt{DEDUCED}}}
 \newcommand{\nativeref}{see~\ref{socket.reqmts.native}}
-\newcommand{\CppXref}[1]{\texorpdfstring{C\kern-0.05em\protect\raisebox{.35ex}{\textsmaller[2]{+\kern-0.05em+}}20}{C++20} \S\cxxref{#1}}
+\newcommand{\CppXref}[1]{ISO/IEC 14882:2020, \S#1}
+\newcommand{\CppXrefInAccord}[1]{in accordance with ISO/IEC 14882:2020, #1}
+
+%%\newcommand{\nativeref}{see~\ref{socket.reqmts.native}}
+%%\newcommand{\CppXref}[1]{\texorpdfstring{C\kern-0.05em\protect\raisebox{.35ex}{\textsmaller[2]{+\kern-0.05em+}}20}{C++20} \S\cxxref{#1}}
 % Alternative formatting of cross-references, resolving stable name to number.
 % Needs include{cxx} and CppXIV from cplusplus/draft/source/macros.tex.
 % \input{cxx}
@@ -139,4 +146,5 @@ Scott, and Victor Luchangco},
 
 %%--------------------------------------------------
 %% End of document
+\input{backcover}
 \end{document}

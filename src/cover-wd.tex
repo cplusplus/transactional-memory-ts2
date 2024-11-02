@@ -2,29 +2,51 @@
 %%--------------------------------------------------
 %% Title page for C++ Technical Specification
 
-
 \thispagestyle{empty}
-\begingroup
-\def\hd{\begin{tabular}{ll}
-          \textbf{Document Number:} & {\larger\docno}             \\
-          \textbf{Date:}            & \reldate                    \\
-          \textbf{Revises:}         & \prevdocno                  \\
-          \textbf{Reply to:}        & Michael Wong                \\
-                                    & Codeplay                    \\
-                                    & fraggamuffin@gmail.com
-          \end{tabular}
-}
-\newlength{\hdwidth}
-\settowidth{\hdwidth}{\hd}
-\hfill\begin{minipage}{\hdwidth}\hd\end{minipage}
-\endgroup
+\begin{tabularx}{6.5in}{p{3.5in}|p{3in}}
+\resizebox{0.75in}{!}{\includegraphics{ISOlogo.png}}
+	& \begin{tabular}[t]{l}
+	  ~ \vspace{-0.7in} ~ \\
+	  \huge \textsf{\textbf{International}} \\
+	  \huge \textsf{\textbf{Standard}} \\
+	  ~ \vspace{2in} ~ \\
+	  %%\large \textsf{\textbf{\textcolor{red}{ISO SC22 WG21 N4968}}} \\
+	  \\
+	  \end{tabular} \\
+\hline
+\vspace{0.05in} \large \textbf{Programming Languages — Technical specification for C++ Extensions for Transactional Memory 2}
+	& \vspace{0.05in} \large \textsf{\textbf{Second edition}} \\
+\emph{C++ Extensions pour la Transactional Memory}
+	& \large \textsf{\textbf{2024-11}} \\
+\vspace{5.2in} ~ & \\
+\scriptsize \textsf{Reference number}
+	& \\
+\scriptsize \textsf{ISO 12907:2024(en)}
+	& \scriptsize \textsf{\textcopyright\ ISO 2024}
+\end{tabularx}
 
-\vspace{2.5cm}
-\begin{center}
-\textbf{\Huge
-Working Draft, Extensions to {\Cpp} for Transactional Memory Version 2}
-\end{center}
-\vfill
+%%\thispagestyle{empty}
+%%\begingroup
+%%\def\hd{\begin{tabular}{ll}
+%%         \textbf{Document Number:} & {\larger\docno}             \\
+%%          \textbf{Date:}            & \reldate                    \\
+%%          \textbf{Revises:}         & \prevdocno                  \\
+%%          \textbf{Reply to:}        & Michael Wong                \\
+%%                                    & Codeplay                    \\
+%%                                    & fraggamuffin@gmail.com
+%%          \end{tabular}
+%%}
+%%\newlength{\hdwidth}
+%%\settowidth{\hdwidth}{\hd}
+%%\hfill\begin{minipage}{\hdwidth}\hd\end{minipage}
+%%\endgroup
+
+%%\vspace{2.5cm}
+%%\begin{center}
+%%\textbf{\Huge
+%%Working Draft, Extensions to {\Cpp} for Transactional Memory Version 2}
+%%\end{center}
+%%\vfill
 %%\textbf{Note: this is an early draft. It's known to be incomplet and
 %%  incorrekt, and it has lots of
 %%  b\kern-1.2pta\kern1ptd\hspace{1.5em}for\kern-%%3ptmat\kern0.6ptti\raise0.15ex\hbox{n}g.}

@@ -225,10 +225,10 @@
 \newcommand{\gterm}[1]{\GrammarStylex{#1}}
 \newcommand{\fakegrammarterm}[1]{\gterm{#1}}
 \newcommand{\keyword}[1]{\tcode{#1}\indextext{\idxcode{#1}}}                % macro length: 8
-\newcommand{\grammarterm}[1]{#1}
+\newcommand{\grammarterm}[1]{\indexgram{\idxgram{#1}}\gterm{#1}}
 \newcommand{\grammartermnc}[1]{\indexgram{\idxgram{#1}}\gterm{#1\nocorr}}
 \newcommand{\regrammarterm}[1]{\textit{#1}}
-\newcommand{\placeholder}[1]{#1}                                   % macro length: 12
+\newcommand{\placeholder}[1]{\textit{#1}}                                   % macro length: 12
 \newcommand{\placeholdernc}[1]{\textit{#1\nocorr}}                          % macro length: 14
 \newcommand{\exposid}[1]{\tcode{\placeholder{#1}}}                          % macro length: 8
 \newcommand{\exposidnc}[1]{\tcode{\placeholdernc{#1}}\itcorr[-1]}           % macro length: 10
@@ -236,7 +236,7 @@
 \newcommand{\defnlibxname}[1]{\indexlibrary{\idxxname{#1}}\xname{#1}}
 
 % Non-compound defined term.
-\newcommand{\defn}[1]{#1}
+\newcommand{\defn}[1]{\defnx{#1}{#1}}
 % Defined term with different index entry.
 \newcommand{\defnx}[2]{\indexdefn{#2}\textit{#1}}
 % Compound defined term with 'see' for primary term.
@@ -280,8 +280,8 @@
 \newcommand{\leftshift}[1]{\ensuremath{\mathbin{\mathsf{lshift}_{#1}}}}
 
 %% Notes and examples
-\newcommand{\noteintro}[1]{#1}
-\newcommand{\noteoutro}[1]{\,---\,#1\kern.5pt]}
+\newcommand{\noteintro}[1]{[\textit{#1}:}
+\newcommand{\noteoutro}[1]{\textit{\,---\,#1}\kern.5pt]}
 
 % \newnoteenvironment{ENVIRON}{BEGIN TEXT}{END TEXT}
 % Creates a note-like environment beginning with BEGIN TEXT and
@@ -293,31 +293,14 @@
 \newsubclausecounter{#1}
 \newenvironment{tail#1}
 {\par\small\stepcounter{#1}\noteintro{#2}}
-{}
-\newenvironment{#1}
-{\begin{tail#1}}
-{\end{tail#1}\small\par}   % \small\par is for ISO/IEC 14882:2020 post-DIS compatibility
-}
-
-\newnoteenvironment{note}{NOTE \arabic{note}}{end note}
-
-% \newexplenvironment{ENVIRON}{BEGIN TEXT}{END TEXT}
-% Creates an example-like environment beginning with BEGIN TEXT and
-% ending with END TEXT. A counter with name ENVIRON indicates the
-% number of this kind of note / example that has occurred in this
-% subclause.
-% Use tailENVIRON to avoid inserting a \par at the end.
-\newcommand{\newexplenvironment}[3]{
-\newsubclausecounter{#1}
-\newenvironment{tail#1}
-{\par\small\stepcounter{#1}\noteintro{#2}}
 {\noteoutro{#3}}
 \newenvironment{#1}
 {\begin{tail#1}}
-{\end{tail#1}\small\par}   % \small\par is for ISO/IEC 14882:2020 post-DIS compatibility
+{\end{tail#1}\small\par}   % \small\par is for C++20 post-DIS compatibility
 }
 
-\newexplenvironment{example}{EXAMPLE \arabic{example}}{end EXAMPLE}
+\newnoteenvironment{note}{Note \arabic{note}}{end note}
+\newnoteenvironment{example}{Example \arabic{example}}{end example}
 
 \makeatletter
 \let\footnote\@undefined
@@ -336,10 +319,10 @@
 \makeatother
 
 %% Library function descriptions
-\newcommand{\Fundescx}[1]{#1}
+\newcommand{\Fundescx}[1]{\textit{#1}}
 \newcommand{\Fundesc}[1]{\Fundescx{#1}:\space}
 \newcommand{\recommended}{\Fundesc{Recommended practice}}
-\newcommand{\required}{\Fundesc{Required behaviour}}
+\newcommand{\required}{\Fundesc{Required behavior}}
 \newcommand{\constraints}{\Fundesc{Constraints}}
 \newcommand{\mandates}{\Fundesc{Mandates}}
 \newcommand{\expects}{\Fundesc{Preconditions}}
@@ -347,7 +330,7 @@
 \newcommand{\ensures}{\Fundesc{Postconditions}}
 \newcommand{\returns}{\Fundesc{Returns}}
 \newcommand{\throws}{\Fundesc{Throws}}
-\newcommand{\default}{\Fundesc{Default behaviour}}
+\newcommand{\default}{\Fundesc{Default behavior}}
 \newcommand{\complexity}{\Fundesc{Complexity}}
 \newcommand{\remarks}{\Fundesc{Remarks}}
 \newcommand{\errors}{\Fundesc{Error conditions}}
@@ -425,7 +408,7 @@
 
 %% Concepts
 \newcommand{\oldconceptname}[1]{Cpp17#1}
-\newcommand{\oldconcept}[1]{\oldconceptname{#1}}
+\newcommand{\oldconcept}[1]{\textit{\oldconceptname{#1}}}
 \newcommand{\defnoldconcept}[1]{\indexdefn{\idxoldconcept{#1}}\oldconcept{#1}}
 \newcommand{\idxoldconcept}[1]{\oldconceptname{#1}@\oldconcept{#1}}
 % FIXME: A "new" oldconcept (added after C++17),
@@ -612,7 +595,7 @@
  \newcommand{\nontermdef}[1]{{\BnfNontermshape##1\itcorr}\indexgrammar{\idxgram{##1}}\textnormal{:}}
  \newcommand{\terminal}[1]{{\BnfTermshape ##1}}
  \renewcommand{\keyword}[1]{\terminal{##1}\indextext{\idxcode{##1}}}
- \renewcommand{\exposid}[1]{\terminal{##1}}
+ \renewcommand{\exposid}[1]{\terminal{\textit{##1}}}
  \renewcommand{\placeholder}[1]{\textrm{\textit{##1}}}
  \newcommand{\descr}[1]{\textnormal{##1}}
  \newcommand{\bnfindent}{\hspace*{\bnfindentfirst}}
