@@ -4,29 +4,35 @@
 
 
 \rSec1[lex.name]{Identifiers}
+%%5.10
+The requirements of \CppXref{lex.name} apply to this document. 
 
-In \CppXref{lex.name},
-add %\added
-{\tcode{atomic}} to the table of identifiers with special meaning (Table 4).
+In \CppXref{lex.name}, in addition to the requirements of Table 4, this document requires the following in Table \cxxref{tab:lex.name.special} - Identifiers with special meaning: 
+%%add %\added
+\begin{quote}
+{\tcode{atomic}}
+\end{quote}
 
 \rSec0[basic]{Basics}
 
-\setcounter{section}{8}
+%%\setcounter{section}{8}
 
-\rSec1[basic.exec]{Program execution}
+%%\rSec1[basic.exec]{Program execution}
 
-\setcounter{section}{9}
+%%\setcounter{section}{9}
 
-\rSec2[intro.execution]{Sequential execution}
+\rSec1[intro.execution]{Sequential execution}
+%%6.9.1
+The requirements of \CppXref{intro.execution} apply to this document. 
 
-Change in \CppXref{intro.execution} paragraph 5 as indicated:
+In \CppXref{intro.execution}, in addition to the requirements of paragraph 5,  this document requires the following in paragraph 5:
 
+%%\begin{quote}
+%%\setcounter{Paras}{4}
+%%\setcounter{Bullets1}{3}
+%%\pnum
+%%A \defn{full-expression} is
 \begin{quote}
-\setcounter{Paras}{4}
-\setcounter{Bullets1}{3}
-\pnum
-A \defn{full-expression} is
-
 \begin{itemize}
 \item
   ...
@@ -44,17 +50,21 @@ A \defn{full-expression} is
   that is not otherwise part of a full-expression.
 \end{itemize}
 \end{quote}
+%%\end{quote}
 
-\rSec2[intro.multithread]{Multi-threaded executions and data races}
-\setcounter{subsubsection}{1}
-\rSec3[intro.races]{Data races} 
+%%\rSec2[intro.multithread]{Multi-threaded executions and data races}
+%%\setcounter{subsubsection}{1}
+\rSec1[intro.races]{Data races} 
+%%6.9.2.2
+The requirements of \CppXref{intro.races} apply to this document.
 
-Change in \CppXref{intro.races} paragraph 6 as indicated:
+In \CppXref{intro.races}, instead of the requirements of  paragraph 6,  this document requires the following in paragraph 6:
 
-\begin{quote}
-\setcounter{Paras}{5}
-\pnum
+%%\begin{quote}
+%%\setcounter{Paras}{5}
+%%\pnum
 %\removed{Certain} \added
+\begin{quote}
 {Atomic blocks as well as certain} library
 calls 
 %\added
@@ -62,13 +72,14 @@ calls
 {atomic blocks
 and} library calls performed by another thread.
 \end{quote}
+%%\end{quote}
 
-Add a new paragraph after \CppXref{intro.races} paragraph 20:
+In \CppXref{intro.races}, in addition to the requirements of paragraph 20,  this document requires the following after paragraph 20:
 
 \begin{quote}
-\pnum
-\setcounter{Paras}{20}
-\setcounter{note}{20}
+%%\pnum
+%%\setcounter{Paras}{20}
+%%\setcounter{note}{20}
 The execution of an atomic block that is not dynamically nested within another atomic
 block is termed a \defn{transaction}.
 \begin{note}
@@ -92,16 +103,16 @@ If the evaluations in T1 and T2 do not conflict, they might be
 executed concurrently.
 \end{note}
 
-\pnum
-Two actions are \defn{potentially concurrent} if ...
+%%\pnum
+%%Two actions are \defn{potentially concurrent} if ...
 \end{quote}
 
-Change in \CppXref{intro.races} paragraph 21:
+In \CppXref{intro.races}, instead of the requirements of paragraph 21,  this document requires the following in paragraph 21:
 
 \begin{quote}
-\setcounter{Paras}{20}
-\setcounter{note}{20}
-\pnum
+%%\setcounter{Paras}{20}
+%%\setcounter{note}{20}
+%%\pnum
 ...
 \begin{note}
 It can be shown that programs that correctly use
@@ -117,11 +128,11 @@ interleaving. This is normally referred to as "sequential consistency".
 \end{note}
 \end{quote}
 
-Add a new paragraph after \CppXref{intro.multithread.general} paragraph 21:
-
+%%Add a new paragraph after \CppXref{intro.multithread.general} paragraph 21:
+In \CppXref{intro.races}, in addition to the requirements of paragraph 21,  this document requires the following after paragraph 21:
 \begin{quote}
-\setcounter{Paras}{21}
-\pnum
+%%\setcounter{Paras}{21}
+%%\pnum
 \begin{note}
 The following holds for a data-race-free program: If the start
 of an atomic block $T$ is sequenced before an evaluation $A$, $A$ is sequenced
@@ -135,12 +146,14 @@ atomic block appear to be contiguous in the interleaving.
 \end{note}
 \end{quote}
 
-\rSec3[intro.progress]{Forward progress} 
+\rSec1[intro.progress]{Forward progress} 
+%%6.9.2.3
+The requirements of \CppXref{intro.progress} apply to this document. 
 
-Change in \CppXref{intro.progress} paragraph 1 as indicated:
+In \CppXref{intro.progress}, instead of the requirements of paragraph 1,  this document requires the following in paragraph 1:
 
 \begin{quote}
-\pnum
+%%\pnum
 %\removed{The implementation may assume that any thread will eventually do}
 %\added
 {An \defn{inter-thread side effect} is} one of the following:
@@ -168,12 +181,15 @@ such as removal of empty loops, even when termination cannot be proven.
 \end{note}
 \end{quote}
 
-\setcounter{chapter}{7}
+%%\setcounter{chapter}{7}
 
 \rSec0[stmt.stmt]{Statements}
 \rSec1[stmt.pre]{Preamble}  
-\pnum
-Add a production to the grammar in \CppXref{stmt.pre} as indicated:
+%%8.1
+%%\pnum
+The requirements of \CppXref{stmt.pre} apply to this document. 
+
+In \CppXref{stmt.pre}, instead of the requirements of paragraph 1,  this document requires the following in paragraph 1 in the grammar production:
 
 \begin{quote}
 \begin{bnf}
@@ -191,22 +207,26 @@ Add a production to the grammar in \CppXref{stmt.pre} as indicated:
 \end{bnf}
 \end{quote}
 
-\setcounter{section}{7}
+%%\setcounter{section}{7}
+\rSec1[stmt]{Statement}
 
-Add a new subclause before \CppXref{stmt.dcl}:
+%%8 and 8.8
+The requirements of \CppXref{stmt} apply to this document.
+
+In \CppXref{stmt}, in addition to the requirements of \CppXref{stmt.dcl},  this document requires the following before \CppXref{stmt.dcl}:
 
 \begin{quote}
-\rSec1[stmt.tx]{Atomic statement}  
+\rSec2[stmt.tx]{Atomic statement}  
 
 \begin{bnf}
 \nontermdef{atomic-statement}\br
     \keyword{atomic} \keyword{do} compound-statement
 \end{bnf}
 
-\pnum
+%%\pnum
 An \grammarterm{atomic-statement} is also called an \emph{atomic block}.
 
-\pnum
+%%\pnum
 The start of the atomic block is immediately after the
 opening \tcode{\{} of the \grammarterm{compound-statement}.
 Evaluation of the end of the atomic block occurs
@@ -221,19 +241,19 @@ are destroyed prior to reaching the end of the atomic block;
 see \cxxref{stmt.jump}.
 \end{note}
 
-\pnum
+%%\pnum
 A \keyword{case} or \keyword{default} label
 appearing within an atomic block shall be associated with a
 \keyword{switch} statement (\cxxref{stmt.switch}) within the same
 atomic block. A label (\cxxref{stmt.label}) declared in an atomic block
 shall only be referred to by a statement in the same atomic block.
 
-\pnum
+%%\pnum
 If the execution of an atomic block evaluates an inter-thread side
 effect\iref{intro.progress} or if an atomic block is exited
 via an exception, the behavior is undefined.
 
-\pnum
+%%\pnum
 \recommended
 In case an atomic block is exited via an exception,
 the program should be terminated
@@ -241,7 +261,7 @@ without invoking a terminate handler (\cxxref{exception.terminate}) or
 destroying any objects
 with static or thread storage duration (\cxxref{basic.start.term}).
 
-\pnum
+%%\pnum
 If the execution of an atomic block evaluates any of the following
 outside of a manifestly constant-evaluated context (\cxxref{expr.const}),
 the behavior is implementation-defined:
@@ -315,17 +335,23 @@ quickly and touch little data.
 \end{note}
 \end{quote}
 
-\setcounter{chapter}{14}
+%%\setcounter{chapter}{14}
 
 \rSec0[cpp]{Preprocessor}
 
-\setcounter{section}{10}
+%%\setcounter{section}{10}
+
+
 
 \rSec1[cpp.predefined]{Predefined macro names}
+%%15.11
+The requirements of \CppXref{cpp.predefined} apply to this document. 
 
-Add a row to Table \cxxref{tab:cpp.predefined.ft} in \CppXref{cpp.predefined}:
+In \CppXref{cpp.predefined}, in addition to the requirements of Table 19, this document requires the following in Table \cxxref{tab:cpp.predefined.ft} - Feature-test Macros: 
 
-\setcounter{table}{18}
+%%Add a row to Table \cxxref{tab:cpp.predefined.ft} in \CppXref{cpp.predefined}:
+
+%%\setcounter{table}{18}
 
 \begin{floattable}{Feature-test macros}{tab:intro.features}
 {ll}
@@ -338,19 +364,24 @@ Add a row to Table \cxxref{tab:cpp.predefined.ft} in \CppXref{cpp.predefined}:
 
 \rSec0[library]{Library introduction}
 
-\setcounter{section}{3}
+%%\setcounter{section}{3}
 
-\rSec1[requirements]{Library-wide requirements}
+\rSec1[conforming]{Conforming implementations}
+%%16.4.6
+%%\setcounter{subsection}{6}
+%%\setcounter{subsubsection}{16}
 
-\setcounter{subsection}{6}
-\setcounter{subsubsection}{16}
+The requirements of \CppXref{conforming} apply to this document.
 
-Add a new subclause after \CppXref{lib.types.movedfrom}:
+In \CppXref{conforming}, in addition to the requirements of \CppXref{lib.types.movedfrom},  this document requires the following after \CppXref{lib.types.movedfrom}:
+
+
+%%Add a new subclause after \CppXref{lib.types.movedfrom}:
 
 \begin{quote}
-\rSec3[atomic.use]{Functions usable in an atomic block}
+\rSec2[atomic.use]{Functions usable in an atomic block}
 
-\pnum
+%%\pnum
 All library functions may be used in an atomic block\iref{stmt.tx}, except
 
 \begin{itemize}
