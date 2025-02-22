@@ -44,6 +44,8 @@ None
 
 Hans Boehm
 Victor Luchangco
+Paul McKenney
+Maged Michael
 Jens Maurer
 Michael L. Scott
 Michael Spear
