@@ -20,9 +20,25 @@
 %%--------------------------------------------------
 %% Difference markups
 %%--------------------------------------------------
-\definecolor{addclr}{rgb}{0,.6,.6}
+%%\definecolor{addclr}{rgb}{0,.6,.6}
+\definecolor{addclr}{rgb}{0,.5,0}
 \definecolor{remclr}{rgb}{1,0,0}
 \definecolor{noteclr}{rgb}{0,0,1}
+%%\usepackage{xcolor} % Required for color definitions
+%%\usepackage{soul}   % Required for the \uline command (if you want underlining)
+
+\definecolor{addedtextclr}{rgb}{0,0.5,0} % Defines a dark green color
+
+\newcommand{\addedtext}[1]{\textcolor{addedtextclr}{#1}} % Command for added text without underlining
+%%\renewcommand{\added}[1]{\textcolor{addclr}{\uline{#1}}} % Redefines \added to be green and underlined
+\usepackage{xcolor} % Required for color definitions
+
+\definecolor{addedclr}{rgb}{0,0.5,0} % Defines a dark green color
+
+\newenvironment{addedsection}{%
+  \color{addedclr}%
+}{%
+}
 
 \renewcommand{\added}[1]{\textcolor{addclr}{\uline{#1}}}
 \newcommand{\removed}[1]{\textcolor{remclr}{\sout{#1}}}

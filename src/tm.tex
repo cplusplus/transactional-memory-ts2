@@ -20,6 +20,7 @@ add \added{\tcode{atomic}} to the table of identifiers with special meaning (Tab
 
 Change in \CppXref{intro.execution} paragraph 5 as indicated:
 
+%%\begin{addedsection}
 \begin{quote}
 \setcounter{Paras}{4}
 \setcounter{Bullets1}{3}
@@ -41,6 +42,7 @@ A \defn{full-expression} is
   that is not otherwise part of a full-expression.
 \end{itemize}
 \end{quote}
+%%\end{addedsection}
 
 \rSec2[intro.multithread]{Multi-threaded executions and data races}
 \setcounter{subsubsection}{1}
@@ -48,6 +50,7 @@ A \defn{full-expression} is
 
 Change in \CppXref{intro.races} paragraph 6 as indicated:
 
+%%\begin{addedsection}
 \begin{quote}
 \setcounter{Paras}{5}
 \pnum
@@ -55,9 +58,11 @@ Change in \CppXref{intro.races} paragraph 6 as indicated:
 calls \added{may} \emph{synchronize with} other \added{atomic blocks
 and} library calls performed by another thread.
 \end{quote}
+%%\end{addedsection}
 
 Add a new paragraph after \CppXref{intro.races} paragraph 20:
 
+\begin{addedsection}
 \begin{quote}
 \pnum
 \setcounter{Paras}{20}
@@ -88,6 +93,7 @@ executed concurrently.
 \pnum
 Two actions are \defn{potentially concurrent} if ...
 \end{quote}
+\end{addedsection}
 
 Change in \CppXref{intro.races} paragraph 21:
 
@@ -110,6 +116,7 @@ interleaving. This is normally referred to as "sequential consistency".
 
 Add a new paragraph after \CppXref{intro.multithread.general} paragraph 21:
 
+\begin{addedsection}
 \begin{quote}
 \setcounter{Paras}{21}
 \pnum
@@ -125,6 +132,7 @@ interleaved (sequentially consistent) execution, the operations of each
 atomic block appear to be contiguous in the interleaving.
 \end{note}
 \end{quote}
+\end{addedsection}
 
 \rSec3[intro.progress]{Forward progress} 
 
@@ -182,6 +190,7 @@ Add a production to the grammar in \CppXref{stmt.pre} as indicated:
 
 Add a new subclause before \CppXref{stmt.dcl}:
 
+\begin{addedsection}
 \begin{quote}
 \rSec1[stmt.tx]{Atomic statement}  
 
@@ -301,6 +310,7 @@ Atomic blocks are likely to perform best where they execute
 quickly and touch little data.
 \end{note}
 \end{quote}
+\end{addedsection}
 
 \setcounter{chapter}{14}
 
@@ -312,6 +322,7 @@ quickly and touch little data.
 
 Add a row to Table \cxxref{tab:cpp.predefined.ft} in \CppXref{cpp.predefined}:
 
+%%\begin{addedsection}
 \setcounter{table}{18}
 
 \begin{floattable}{Feature-test macros}{tab:intro.features}
@@ -321,7 +332,7 @@ Add a row to Table \cxxref{tab:cpp.predefined.ft} in \CppXref{cpp.predefined}:
 \capsep
 \tcode{__cpp_transactional_memory}  & \tcode{\tsver} \\
 \end{floattable}
-
+%%\end{addedsection}
 
 \rSec0[library]{Library introduction}
 
@@ -334,6 +345,7 @@ Add a row to Table \cxxref{tab:cpp.predefined.ft} in \CppXref{cpp.predefined}:
 
 Add a new subclause after \CppXref{lib.types.movedfrom}:
 
+\begin{addedsection}
 \begin{quote}
 \rSec3[atomic.use]{Functions usable in an atomic block}
 
@@ -385,3 +397,4 @@ All library functions may be used in an atomic block\iref{stmt.tx}, except
   thread support (\cxxref{thread})
 \end{itemize}
 \end{quote}
+\end{addedsection}
